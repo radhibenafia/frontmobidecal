@@ -4,9 +4,10 @@ import { AppBar, Toolbar, Typography, Button, Drawer, List, ListItem, ListItemIc
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import SettingsIcon from '@mui/icons-material/Settings';
-import Chatbot from './Chatbot';
-import Login from './Login';
-import Analyse from './Analyse';// Assurez-vous que ce fichier existe
+import Chatbot from './admin/Chatbot';
+import Login from './admin/Login';
+import Analyse from './admin/Analyse';
+
 
 const drawerWidth = 240;
 

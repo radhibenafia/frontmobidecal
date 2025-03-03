@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { getDocs, collection } from 'firebase/firestore';
-import { firestore } from './Firebase'; // Assurez-vous que le chemin vers votre fichier firebase.js est correct
+import { firestore } from '../config/Firebase'; // Assurez-vous que le chemin vers votre fichier firebase.js est correct
 import { AppBar, Toolbar, Typography, Button, Container, Paper, Box, Select, MenuItem, Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
