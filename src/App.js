@@ -5,7 +5,8 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import SettingsIcon from '@mui/icons-material/Settings';
 import Chatbot from './Chatbot';
-import Login from './Login';// Assurez-vous que ce fichier existe
+import Login from './Login';
+import Analyse from './Analyse';// Assurez-vous que ce fichier existe
 
 const drawerWidth = 240;
 
@@ -45,6 +46,9 @@ function Home() {
               Go to Chatbot
             </Button>
             <Button variant="contained" color="secondary" component={Link} to="/Login">
+              login
+            </Button>
+            <Button variant="contained" color="secondary" component={Link} to="/Analyse">
               login
             </Button>
           </Toolbar>
@@ -93,6 +97,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Analyse" element={<Analyse />} />
       </Routes>
     </Router>
   );

@@ -9,7 +9,7 @@ const App = () => {
         <Container>
             <Paper sx={{ p: 2, mt: 4 }}>
                 <Typography variant="h6" gutterBottom>
-                    GEMINI-1.5-FLASH
+                    GEMINI-1.5-FLASHmpmkkkm
                 </Typography>
             </Paper>
         </Container>
