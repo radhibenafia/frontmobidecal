@@ -1,23 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
     Container,
     TextField,
     Button,
-    Checkbox,
-    FormControlLabel,
     Typography,
-    Box,
     Card,
     CardContent,
     Link,
-    IconButton,
+    Alert,
 } from "@mui/material";
-import { Email, Lock } from "@mui/icons-material";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import axios from "axios";
 
 const Login = () => {
+    const [nom, setNom] = useState("");
+    const [prenom, setPrenom] = useState("");
+    const [error, setError] = useState("");
+    const navigate = useNavigate();
+
+    const handleLogin = async () => {
+        try {
+            const response = await axios.post("http://localhost:5000/appi/login", { nom, prenom });
+
+            if (response.status === 200) {
+                // Stocker nom et prénom dans le localStorage
+                localStorage.setItem("nom", nom);
+                localStorage.setItem("prenom", prenom);
+
+                // Redirection vers la page chatbot
+                navigate("/chatbot");
+            }
+        } catch (err) {
+            setError("Erreur de connexion. Vérifiez vos informations.");
+        }
+    };
+
     return (
         <Container
             maxWidth="lg"
@@ -29,52 +46,34 @@ const Login = () => {
                 backgroundColor: "#f8f9fc",
             }}
         >
-            {/* Form Card */}
             <Card sx={{ width: 400, boxShadow: 3, borderRadius: 3 }}>
                 <CardContent>
-                    <Typography variant="body2" sx={{ textAlign: "center", mb: 2 }}>
-                        <Link href="#" underline="hover" sx={{ color: "black" }}>
-                            ← Back to homepage
-                        </Link>
-                    </Typography>
-
                     <Typography variant="h5" sx={{ textAlign: "center", fontWeight: "bold", mb: 2 }}>
-                        Sign in to our platform
+                        Connexion
                     </Typography>
 
-                    {/* Email Input */}
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                        <Email sx={{ color: "gray", mr: 1 }} />
-                        <TextField
-                            fullWidth
-                            label="Your Email"
-                            variant="outlined"
-                            size="small"
-                            defaultValue="example@company.com"
-                        />
-                    </Box>
+                    {error && <Alert severity="error">{error}</Alert>}
 
-                    {/* Password Input */}
-                    <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-                        <Lock sx={{ color: "gray", mr: 1 }} />
-                        <TextField
-                            fullWidth
-                            label="Your Password"
-                            type="password"
-                            variant="outlined"
-                            size="small"
-                        />
-                    </Box>
+                    <TextField
+                        fullWidth
+                        label="Nom"
+                        variant="outlined"
+                        size="small"
+                        value={nom}
+                        onChange={(e) => setNom(e.target.value)}
+                        sx={{ mb: 2 }}
+                    />
 
-                    {/* Remember Me & Forgot Password */}
-                    <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
-                        <FormControlLabel control={<Checkbox />} label="Remember me" />
-                        <Link href="#" underline="hover" sx={{ fontSize: 14 }}>
-                            Lost password?
-                        </Link>
-                    </Box>
+                    <TextField
+                        fullWidth
+                        label="Prénom"
+                        variant="outlined"
+                        size="small"
+                        value={prenom}
+                        onChange={(e) => setPrenom(e.target.value)}
+                        sx={{ mb: 2 }}
+                    />
 
-                    {/* Sign in Button */}
                     <Button
                         fullWidth
                         variant="contained"
@@ -83,29 +82,13 @@ const Login = () => {
                             color: "white",
                             "&:hover": { backgroundColor: "#374151" },
                         }}
+                        onClick={handleLogin}
                     >
-                        Sign in
+                        Se connecter
                     </Button>
 
-                    {/* Social Login */}
-                    <Typography variant="body2" sx={{ textAlign: "center", mt: 2, mb: 1 }}>
-                        or login with
-                    </Typography>
-                    <Box sx={{ display: "flex", justifyContent: "center", gap: 1 }}>
-                        <IconButton>
-                            <FacebookIcon />
-                        </IconButton>
-                        <IconButton>
-                            <GitHubIcon />
-                        </IconButton>
-                        <IconButton>
-                            <TwitterIcon />
-                        </IconButton>
-                    </Box>
-
-                    {/* Create Account */}
                     <Typography variant="body2" sx={{ textAlign: "center", mt: 2 }}>
-                        Not registered? <Link href="#">Create account</Link>
+                        <Link href="#">Mot de passe oublié ?</Link>
                     </Typography>
                 </CardContent>
             </Card>
