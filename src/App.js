@@ -102,7 +102,7 @@ function Home() {
                 <CardContent>
                   <Typography variant="h5">Customers</Typography>
                   <Typography variant="h4" color="primary">345k</Typography>
-                  <Typography color="success.main">+22% Since last month</Typography>
+                  <Typography color="success.main">+22% </Typography>
                 </CardContent>
               </Card>
             </Grid>
