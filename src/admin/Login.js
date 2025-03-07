@@ -78,7 +78,7 @@ const Login = () => {
                         fullWidth
                         variant="contained"
                         sx={{
-                            backgroundColor: "#111827",
+                            backgroundColor: "#3f51b5",
                             color: "white",
                             "&:hover": { backgroundColor: "#374151" },
                         }}

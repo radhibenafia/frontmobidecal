@@ -50,7 +50,7 @@ function Analyse() {
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             Analyse des Données
                         </Typography>
-                        <Button color="#3f51b5" component={Link} to="/" sx={{ marginLeft: 'auto' }}>Retour à l'Accueil</Button>
+                        <Button color="#3f51b5" component={Link} to="/Chatbot" sx={{ marginLeft: 'auto' }}>Retour à l'Accueil</Button>
                     </Toolbar>
                 </AppBar>
 
