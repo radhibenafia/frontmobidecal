@@ -65,9 +65,14 @@ function Chatbot() {
                         </Button>
 
                         <Box sx={{ mx: 2 }} />
+                        <Button variant="contained" color="secondary" component={Link} to="/Fileup">
+                            File analysis
+                        </Button>
+                        <Box sx={{ mx: 2 }} />
                         <Button variant="contained" color="secondary" component={Link} to="/Login">
                             Return
                         </Button>
+
 
                     </Toolbar>
                 </AppBar>

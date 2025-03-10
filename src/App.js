@@ -9,6 +9,7 @@ import Chatbot from './admin/Chatbot';
 import Login from './admin/Login';
 import Analyse from './admin/Analyse';
 import Protestation from './admin/Protestation';
+import Fileup from './admin/Fileadd';
 import { PieChart, Pie, Cell, Legend, Tooltip } from 'recharts';
 import Todoapp from './admin/Todoapp';
 
@@ -158,6 +159,7 @@ function App() {
         <Route path="/Analyse" element={<Analyse />} />
         <Route path="/Protestation" element={<Protestation />} />
         <Route path="/Todoapp" element={<Todoapp />} />
+        <Route path="/Fileup" element={<Fileup />} />
       </Routes>
     </Router>
   );
