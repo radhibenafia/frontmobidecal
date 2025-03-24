@@ -18,7 +18,7 @@ const PChatbot = () => {
     const [imageFile, setImageFile] = useState(null); // Stocker le fichier d'image
     const [base64Image, setBase64Image] = useState(""); // Stocker l'image en base64
 
-    const apiKey = "AIzaSyAMWZod9LiYYROyNwqrMi3IN0wOnCU7QLI"; // Remplacez par votre clé API
+    const apiKey = ""; // Remplacez par votre clé API
     const genAI = new GoogleGenerativeAI(apiKey);
 
     // Fonction pour extraire du texte d'une image
