@@ -10,6 +10,10 @@ import Login from './admin/Login';
 import Analyse from './admin/Analyse';
 import Protestation from './admin/Protestation';
 import Fileup from './admin/Fileadd';
+import Game1 from "./admin/Game1"
+import Game2 from "./admin/Game2"
+import Game3 from "./admin/Game3"
+import Game4 from "./admin/Game4"
 import { PieChart, Pie, Cell, Legend, Tooltip } from 'recharts';
 import Todoapp from './admin/Todoapp';
 
@@ -160,6 +164,10 @@ function App() {
         <Route path="/Protestation" element={<Protestation />} />
         <Route path="/Todoapp" element={<Todoapp />} />
         <Route path="/Fileup" element={<Fileup />} />
+        <Route path="/Game1" element={<Game1 />} />
+        <Route path="/Game2" element={<Game2 />} />
+        <Route path="/Game3" element={<Game3 />} />
+        <Route path="/Game4" element={<Game4 />} />
       </Routes>
     </Router>
   );

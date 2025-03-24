@@ -69,9 +69,26 @@ function Chatbot() {
                             File analysis
                         </Button>
                         <Box sx={{ mx: 2 }} />
+                        <Button variant="contained" color="secondary" component={Link} to="/Game1">
+                            Control game1
+                        </Button>
+                        <Box sx={{ mx: 2 }} />
+                        <Button variant="contained" color="secondary" component={Link} to="/Game2">
+                            Control game2
+                        </Button>
+                        <Box sx={{ mx: 2 }} />
+                        <Button variant="contained" color="secondary" component={Link} to="/Game3">
+                            classification
+                        </Button>
+                        <Box sx={{ mx: 2 }} />
                         <Button variant="contained" color="secondary" component={Link} to="/Login">
                             Return
                         </Button>
+                        <Box sx={{ mx: 2 }} />
+                        <Button variant="contained" color="secondary" component={Link} to="/Game4">
+                            Control game4
+                        </Button>
+
 
 
                     </Toolbar>
